@@ -31,8 +31,7 @@ class ThumbnailMakerService(object):
                 dl_queue.task_done()
             except Queue.empty:
                 logging.info("Queue empty")
-
-    def resize_image(self, filename):
+   def resize_image(self, filename):
         target_sizes = [32, 64, 200]
         logging.info(f"resizing image {filename}")
         orig_img = Image.open(self.input_dir + os.path.sep + filename)
